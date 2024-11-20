@@ -5,7 +5,7 @@ import random
 class Game:
     def __init__(self, bird_img, pipe_img, background_img, ground_img):
         self.bird = pygame.image.load(bird_img).convert_alpha()
-        self.bird_rect = self.bird.get_rect(center = (70,180))
+        self.bird_rect = self.bird.get_rect(center = (60,90))
         self.pipe = pygame.image.load(pipe_img).convert_alpha()
         self.background = pygame.image.load(background_img).convert_alpha()
         self.ground = pygame.image.load(ground_img).convert_alpha()
@@ -63,8 +63,8 @@ class Game:
 
     def move_pipes(self):
         for pipe in self.pipes:
-            pipe.centerx -= 1
-            if pipe.centerx <= -40:
+            pipe.centerx -= 2
+            if pipe.centerx <= -50:
                 self.pipes.remove(pipe)
 
     def show_pipes(self, screen):
